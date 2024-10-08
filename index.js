@@ -1,5 +1,8 @@
 // You are given an array representing the daily average temperatures (in Celsius) of a month.
-const temperatures = [22, 25, 19, 24, 28, 30, 21, 20, 27, 29, 23, 26, 24, 22, 18, 19, 21, 28, 30, 27, 26, 25, 22, 23, 19, 20, 28, 29, 27, 26];
+const temperatures = [
+  22, 25, 19, 24, 28, 30, 21, 20, 27, 29, 23, 26, 24, 22, 18, 19, 21, 28, 30,
+  27, 26, 25, 22, 23, 19, 20, 28, 29, 27, 26,
+];
 
 /*****************************************************************
 Part 1: Temperature Analysis
@@ -11,8 +14,12 @@ Task 2) Create a new array containing temperatures less than 20 degrees Celsius.
        Output 2) [19, 18, 19, 19]
 
 ******************************************************************/
-const temperaturesGreaterThanOrEqualTo25C = temperatures.filter((temperature) => temperature >= 25);
-const temperaturesLessThan20C = temperatures.filter((temperature) => temperature < 20);
+const temperaturesGreaterThanOrEqualTo25C = temperatures.filter(
+  (temperature) => temperature >= 25
+);
+const temperaturesLessThan20C = temperatures.filter(
+  (temperature) => temperature < 20
+);
 
 // console.log(temperaturesGreaterThanOrEqualTo25C, temperaturesLessThan20C);
 
@@ -44,12 +51,14 @@ Task 4) Create a new array that labels each temperature as either "Warm" for tem
 ]
 
 ******************************************************************/
-const temperaturesFahrenheit = temperatures.map((temperature) => (temperature * (9/5) + 32));
+const temperaturesFahrenheit = temperatures.map(
+  (temperature) => temperature * (9 / 5) + 32
+);
 const temperaturesLabeled = temperatures.map((temperature) => {
-    if (temperature >= 25) return "Warm"
-    if (temperature >= 20 && temperature < 25) return "Mild"
-    return "Cool"
-})
+  if (temperature >= 25) return "Warm";
+  if (temperature >= 20 && temperature < 25) return "Mild";
+  return "Cool";
+});
 
 // console.log(temperaturesFahrenheit, temperaturesLabeled);
 
@@ -66,14 +75,22 @@ Task 6) Calculate and return the lowest temperature of the month.
 
 // Note: Use appropriate JavaScript array iteration methods such as filter, map, reduce, etc., to achieve the desired output for each task.
 
-const lowestTemperature = temperatures.reduce((currentLowestTemperature, currentTemperature) => {
-        if (currentTemperature < currentLowestTemperature) return currentTemperature
-        else return currentLowestTemperature
-    }, Infinity);
+const lowestTemperature = temperatures.reduce(
+  (currentLowestTemperature, currentTemperature) => {
+    if (currentTemperature < currentLowestTemperature)
+      return currentTemperature;
+    else return currentLowestTemperature;
+  },
+  Infinity
+);
 
-const highestTemperature = temperatures.reduce((currentHighestTemperature, currentTemperature) => {
-        if (currentTemperature > currentHighestTemperature) return currentTemperature
-        else return currentHighestTemperature
-    }, -Infinity);
+const highestTemperature = temperatures.reduce(
+  (currentHighestTemperature, currentTemperature) => {
+    if (currentTemperature > currentHighestTemperature)
+      return currentTemperature;
+    else return currentHighestTemperature;
+  },
+  -Infinity
+);
 
 // console.log(highestTemperature, lowestTemperature);
